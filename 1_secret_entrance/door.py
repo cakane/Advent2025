@@ -1,3 +1,5 @@
+#wtf is this
+
 from pathlib import Path
 
 class Door:
