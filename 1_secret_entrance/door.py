@@ -1,3 +1,5 @@
+from pathlib import Path
+
 class Door:
     def __init__(self, starting_pos=50, numbers=100):
         self.pos = starting_pos
@@ -26,6 +28,13 @@ class Door:
 
 if __name__ == "__main__":
     door = Door(50, 100)
-    door.rot_right(10)
-    door.rot_left(80)
+
+    for line in Path("./ted_doc.txt").read_text().splitlines():
+        dr = line[0]
+        dt = int(line[1:])
+        if dr == 'R':
+            door.rot_right(dt)
+        elif dr == 'L':
+            door.rot_left(dt)
+
     print(door.cross_zero_count)
