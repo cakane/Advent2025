@@ -1,4 +1,7 @@
+#wtf is this
+
 from pathlib import Path
+import time 
 
 class Door:
     def __init__(self, starting_pos=50, numbers=100):
@@ -28,11 +31,11 @@ class Door:
             if self.pos == 0:
                 self.cross_zero_count += 1
 
-
+start = time.time()
 if __name__ == "__main__":
     door = Door(50, 100)
 
-    for line in Path("./ted_doc.txt").read_text().splitlines():
+    for line in Path("./document.txt").read_text().splitlines():
         dr = line[0]
         dt = int(line[1:])
         if dr == 'R':
@@ -42,3 +45,5 @@ if __name__ == "__main__":
 
     print(door.cross_zero_count)
     print(door.click)
+end = time.time()
+print(end - start)

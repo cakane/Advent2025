@@ -1,4 +1,6 @@
 from pathlib import Path 
+import time
+start = time.time()
 doc_path = Path('./document.txt')
 #doc_path = Path('./test_doc.txt')
 arrow_location = 50
@@ -17,3 +19,5 @@ for line in doc_path.read_text().splitlines():
         arrow_location += dt    
     arrow_location = arrow_location % 100
 print(zero_count)
+end = time.time()
+print(end - start)
