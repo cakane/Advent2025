@@ -1,5 +1,5 @@
 from pathlib import Path 
-doc_path = Path('document.txt')
+doc_path = Path('ted_doc.txt')
 arrow_location = 50
 zero_count = 0
 for line in doc_path.read_text().splitlines():
